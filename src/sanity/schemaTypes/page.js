@@ -20,7 +20,7 @@ const pageSchema = {
       name: "sections",
       title: "Page Sections",
       type: "array",
-      of: [{ type: "hero" }],
+      of: [{ type: "hero" }, { type: "whyChooseUs" }],
     },
   ],
 };

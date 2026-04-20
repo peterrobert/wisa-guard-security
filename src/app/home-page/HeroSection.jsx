@@ -8,7 +8,6 @@ const fadeUp = {
 };
 
 const HeroSection = ({ hero }) => {
-  console.log("Hero data:", hero); // Debugging line to check the hero data
   return (
     <section
       id="hero"

@@ -3,6 +3,7 @@ export const homePageQuery = `
   title,
   sections[]{
     ...,
+
     _type == "hero" => {
       headline,
       subtext,
@@ -10,6 +11,17 @@ export const homePageQuery = `
         asset->{
           url
         }
+      }
+    },
+
+    _type == "whyChooseUs" => {
+      tagline,
+      title,
+      description,
+      features[]{
+        title,
+        description,
+        icon
       }
     }
   }

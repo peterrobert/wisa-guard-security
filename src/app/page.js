@@ -10,17 +10,33 @@ import { client } from "@/sanity/lib/client";
 
 export default async function Home() {
   const page = await client.fetch(homePageQuery);
-  const hero = page?.sections?.find((section) => section._type === "hero");
+  const sections = page?.sections || [];
 
   return (
     <>
       <Navbar />
       <div id="main-content" className="pt-20">
-        <HeroSection hero={hero} />
-        <WhyUsSection />
-        <OurServiceSection />
-        <AboutLocation />
-        <CtaSection />
+        {sections.map((section) => {
+          switch (section._type) {
+            case "hero":
+              return <HeroSection key={section._key} hero={section} />;
+
+            case "whyChooseUs":
+              return <WhyUsSection key={section._key} data={section} />;
+
+            case "servicesPreview":
+              return <OurServiceSection key={section._key} data={section} />;
+
+            case "aboutIntro":
+              return <AboutLocation key={section._key} data={section} />;
+
+            case "cta":
+              return <CtaSection key={section._key} data={section} />;
+
+            default:
+              return null;
+          }
+        })}
       </div>
     </>
   );
