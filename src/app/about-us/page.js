@@ -4,16 +4,20 @@ import CompanyOverview from "./CompanyOverview";
 import MissionVision from "./MissionVision";
 import WhyUs from "./WhyUs";
 import CoverageSection from "./CoverageSection";
+import Navbar from "@/components/Navbar";
 
 const AboutUs = () => {
   return (
-    <div id="main-content" className="pt-20">
-      <HeroSection />
-      <CompanyOverview />
-      <MissionVision />
-      <WhyUs />
-      <CoverageSection />
-    </div>
+    <>
+      <Navbar />
+      <div id="main-content" className="pt-20">
+        <HeroSection />
+        <CompanyOverview />
+        <MissionVision />
+        <WhyUs />
+        <CoverageSection />
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+
 import { Inter } from "next/font/google";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="m-0 p-0 text-brand-navy antialiased">
-        <Navbar />
         {children}
 
         <Footer />

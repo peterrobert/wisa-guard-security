@@ -7,7 +7,8 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
-const HeroSection = () => {
+const HeroSection = ({ hero }) => {
+  console.log("Hero data:", hero); // Debugging line to check the hero data
   return (
     <section
       id="hero"
@@ -78,10 +79,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]"
         >
-          Trusted Security <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-red to-red-400">
-            Experts
-          </span>
+          {hero?.headline || "Your Safety, Our Commitment"}
         </motion.h1>
 
         {/* Paragraph */}
@@ -92,9 +90,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          Professional security solutions across Kenya. We combine advanced
-          technology with highly trained personnel to protect what matters most
-          to you.
+          {hero?.subtext ||
+            "Protecting what matters most with our expert security solutions. Your safety is our priority."}
         </motion.p>
 
         {/* Buttons */}
@@ -105,22 +102,14 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.button
+            onClick={() => console.log("clicked")}
             variants={fadeUp}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-8 py-4 bg-brand-red text-white text-base font-semibold rounded-full shadow-lg shadow-brand-red/30 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-8 cursor-pointer py-4 bg-brand-red text-white text-base font-semibold rounded-full shadow-lg shadow-brand-red/30 flex items-center justify-center gap-2"
           >
             Request a Quote
             <i className="fa-solid fa-arrow-right" />
-          </motion.button>
-
-          <motion.button
-            variants={fadeUp}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-8 py-4 bg-white/10 text-white text-base font-semibold rounded-full backdrop-blur-sm border border-white/20"
-          >
-            Contact Us
           </motion.button>
         </motion.div>
       </div>

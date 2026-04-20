@@ -2,14 +2,18 @@ import React from "react";
 import HeroSection from "./HeroSection";
 import ContactForm from "./ContactForm";
 import MapSection from "./MapSection";
+import Navbar from "@/components/Navbar";
 
 const ContactUs = () => {
   return (
-    <div id="main-content" className="pt-20">
-      <HeroSection />
-      <ContactForm />
-      <MapSection />
-    </div>
+    <>
+      <Navbar />
+      <div id="main-content" className="pt-20">
+        <HeroSection />
+        <ContactForm />
+        <MapSection />
+      </div>
+    </>
   );
 };
 
