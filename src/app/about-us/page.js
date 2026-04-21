@@ -29,7 +29,7 @@ const AboutUs = async () => {
             case "whyChooseUs":
               return <WhyUs key={section._key} data={section} />;
 
-            case "coverageSection":
+            case "complianceCoverageSection":
               return <CoverageSection key={section._key} data={section} />;
 
             default:

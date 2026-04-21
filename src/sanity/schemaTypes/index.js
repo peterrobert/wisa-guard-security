@@ -6,6 +6,7 @@ import aboutLocationSection from "./aboutLocationSection";
 import ctaSection from "./ctaSection";
 import companyOverviewSection from "./companyOverviewSection";
 import missionVisionSection from "./missionVisionSection";
+import complianceCoverageSection from "./complianceCoverageSection";
 export const schema = {
   types: [
     pageSchema,
@@ -16,5 +17,6 @@ export const schema = {
     ctaSection,
     companyOverviewSection,
     missionVisionSection,
+    complianceCoverageSection,
   ],
 };

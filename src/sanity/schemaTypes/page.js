@@ -27,6 +27,7 @@ const pageSchema = {
         { type: "missionVisionSection" },
         { type: "servicesSection" },
         { type: "aboutLocationSection" },
+        { type: "complianceCoverageSection" },
         { type: "ctaSection" },
       ],
     },

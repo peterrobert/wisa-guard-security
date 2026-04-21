@@ -125,7 +125,7 @@ export const aboutPageQuery = `
       label
     }
   },
-  
+
   _type == "missionVisionSection" => {
   mission{
     icon,
@@ -138,6 +138,28 @@ export const aboutPageQuery = `
     text
   }
 },
+
+_type == "complianceCoverageSection" => {
+  compliance{
+    icon,
+    title,
+    description,
+    badge{
+      icon,
+      title,
+      subtitle
+    }
+  },
+  coverage{
+    title,
+    icon,
+    description,
+    locations[]{
+      icon,
+      label
+    }
+  }
+}
 
   
   }
