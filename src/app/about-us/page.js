@@ -26,7 +26,7 @@ const AboutUs = async () => {
             case "missionVisionSection":
               return <MissionVision key={section._key} data={section} />;
 
-            case "whyUs":
+            case "whyChooseUs":
               return <WhyUs key={section._key} data={section} />;
 
             case "coverageSection":
