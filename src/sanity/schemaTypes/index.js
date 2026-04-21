@@ -3,6 +3,7 @@ import hero from "./hero";
 import whyChooseUsSchema from "./whyChooseUs";
 import servicesSectionSchema from "./servicesSection";
 import aboutLocationSection from "./aboutLocationSection";
+import ctaSection from "./ctaSection";
 export const schema = {
   types: [
     pageSchema,
@@ -10,5 +11,6 @@ export const schema = {
     whyChooseUsSchema,
     servicesSectionSchema,
     aboutLocationSection,
+    ctaSection,
   ],
 };

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 const fadeUp = {
@@ -12,7 +13,9 @@ const scaleIn = {
   show: { opacity: 1, scale: 1 },
 };
 
-const CtaSection = () => {
+const CtaSection = ({ data }) => {
+  const router = useRouter();
+
   return (
     <motion.section
       id="cta"
@@ -38,7 +41,7 @@ const CtaSection = () => {
               variants={fadeUp}
               className="w-20 h-20 mx-auto bg-brand-light rounded-full flex items-center justify-center mb-8 border border-gray-100"
             >
-              <i className="fa-solid fa-shield-halved text-3xl text-brand-red" />
+              <i className={`fa-solid ${data?.icon} text-3xl text-brand-red`} />
             </motion.div>
 
             {/* Title */}
@@ -46,7 +49,7 @@ const CtaSection = () => {
               variants={fadeUp}
               className="text-4xl md:text-5xl font-bold text-brand-navy mb-6"
             >
-              Secure Your Business Today
+              {data?.title || "Ready to Secure Your World?"}
             </motion.h2>
 
             {/* Text */}
@@ -54,18 +57,19 @@ const CtaSection = () => {
               variants={fadeUp}
               className="text-xl text-brand-gray mb-10 max-w-2xl mx-auto"
             >
-              Dont leave your security to chance. Contact our experts for a
-              comprehensive risk assessment and tailored protection plan.
+              {data?.description ||
+                "Dont leave your security to chance. Contact our experts for a comprehensive risk assessment and tailored protection plan."}
             </motion.p>
 
             {/* Button */}
             <motion.button
+              onClick={() => router.push(`${data?.buttonLink || "/"}`)}
               variants={fadeUp}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 bg-brand-red text-white text-lg font-bold rounded-full hover:bg-red-700 transition-all shadow-xl shadow-brand-red/30 flex items-center justify-center gap-3 mx-auto group"
+              className="px-10 cursor-pointer py-5 bg-brand-red text-white text-lg font-bold rounded-full hover:bg-red-700 transition-all shadow-xl shadow-brand-red/30 flex items-center justify-center gap-3 mx-auto group"
             >
-              Get Protection Now
+              {data?.buttonText || "Get a Free Quote"}
               <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>

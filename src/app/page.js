@@ -30,7 +30,7 @@ export default async function Home() {
             case "aboutLocationSection":
               return <AboutLocation key={section._key} data={section} />;
 
-            case "cta":
+            case "ctaSection":
               return <CtaSection key={section._key} data={section} />;
 
             default:

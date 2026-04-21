@@ -47,6 +47,14 @@ _type == "aboutLocationSection" => {
   }
 },
 
+_type == "ctaSection" => {
+  icon,
+  title,
+  description,
+  buttonText,
+  buttonLink
+},
+
 _type == "servicesSection" => {
       tagline,
       title,

@@ -25,6 +25,7 @@ const pageSchema = {
         { type: "whyChooseUs" },
         { type: "servicesSection" },
         { type: "aboutLocationSection" },
+        { type: "ctaSection" },
       ],
     },
   ],
