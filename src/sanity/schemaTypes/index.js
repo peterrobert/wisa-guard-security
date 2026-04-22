@@ -8,6 +8,7 @@ import companyOverviewSection from "./companyOverviewSection";
 import missionVisionSection from "./missionVisionSection";
 import complianceCoverageSection from "./complianceCoverageSection";
 import service from "./service";
+import processSection from "./processSection";
 export const schema = {
   types: [
     pageSchema,
@@ -20,5 +21,6 @@ export const schema = {
     missionVisionSection,
     complianceCoverageSection,
     service,
+    processSection,
   ],
 };

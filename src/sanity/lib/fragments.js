@@ -29,24 +29,21 @@ _type == "servicesSection" => {
   buttonText,
   buttonLink,
 
-  services[]{
+  services[]->{
     title,
     description,
     icon,
-    service->{
-      slug
-    }
+    slug
   },
 
-  featuredService{
+  featuredService->{
     title,
     description,
-    buttonText,
-    buttonLink,
     icon,
     image{
       asset->{ url }
-    }
+    },
+    slug
   }
 }
 `;
@@ -147,3 +144,29 @@ _type == "complianceCoverageSection" => {
   }
 }
 `;
+
+export const PROCESS_SECTION = `
+_type == "processSection" => {
+  tagline,
+  title,
+  description,
+
+  steps[]{
+    number,
+    title,
+    description,
+    highlight
+  },
+
+  image{
+    asset->{
+      url
+    }
+  },
+
+  badge{
+    icon,
+    title,
+    subtitle
+  }
+}`;

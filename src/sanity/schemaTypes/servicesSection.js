@@ -7,9 +7,6 @@ const servicesSectionSchema = {
     { name: "title", type: "string" },
     { name: "subtitle", type: "string" },
 
-    { name: "buttonText", type: "string" },
-    { name: "buttonLink", type: "string" },
-
     // ✅ REFERENCES
     {
       name: "services",

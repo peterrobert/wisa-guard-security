@@ -9,7 +9,6 @@ const fadeUp = {
 };
 
 const HeroSection = ({ hero }) => {
-  console.log(hero);
   return (
     <motion.section
       id="services-hero"

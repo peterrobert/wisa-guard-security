@@ -7,6 +7,7 @@ import {
   COMPANY_OVERVIEW,
   MISSION_VISION,
   COVERAGE,
+  PROCESS_SECTION,
 } from "./fragments";
 
 export const homePageQuery = `
@@ -42,7 +43,9 @@ export const servicePageQuery = `
   title,
   sections[]{
     ...,
-    ${HERO}
+    ${HERO},
+    ${SERVICES_SECTION},
+    ${PROCESS_SECTION}
   }
 }
 `;

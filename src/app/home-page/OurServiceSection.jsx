@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 const OurServiceSection = ({ data }) => {
-  console.log(data);
   const displyServices = () => {
     if (!data?.services || data.services.length === 0) {
       return (
@@ -24,12 +25,12 @@ const OurServiceSection = ({ data }) => {
           {service.title}
         </h4>
         <p className="text-brand-gray mb-8">{service.description}</p>
-        <a
-          href="#"
+        <Link
+          href={`/service-page/${service.slug?.current}`}
           className="inline-flex items-center text-brand-red font-semibold hover:text-red-700 transition-colors"
         >
           Learn More <i className="fa-solid fa-chevron-right ml-2 text-sm"></i>
-        </a>
+        </Link>
       </div>
     ));
   };
@@ -59,7 +60,9 @@ const OurServiceSection = ({ data }) => {
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="flex-1">
                   <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-red mb-6">
-                    <i className="fa-solid fa-magnifying-glass text-xl"></i>
+                    <i
+                      className={`fa-solid ${data?.featuredService?.icon} text-xl`}
+                    ></i>
                   </div>
                   <h4 className="text-2xl font-bold text-brand-navy mb-4">
                     {data?.featuredService?.title || "Private Investigations"}
@@ -68,13 +71,13 @@ const OurServiceSection = ({ data }) => {
                     {data?.featuredService?.description ||
                       "Our expert private investigators provide discreet and thorough investigations for personal, corporate, and legal matters. With a commitment to confidentiality and professionalism, we uncover the truth to help you make informed decisions."}
                   </p>
-                  <a
-                    href="#"
+                  <Link
+                    href={`/service-page/${data?.featuredService?.slug?.current}`}
                     className="inline-flex items-center px-6 py-3 bg-brand-navy text-white rounded-full font-semibold hover:bg-gray-800 transition-colors"
                   >
                     {data?.featuredService?.buttonText}{" "}
                     <i className="fa-solid fa-arrow-right ml-2"></i>
-                  </a>
+                  </Link>
                 </div>
                 <div className="w-full md:w-1/2 h-48 rounded-2xl overflow-hidden bg-gray-200">
                   <div className="relative w-full h-full">
